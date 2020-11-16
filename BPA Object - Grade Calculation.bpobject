@@ -1,0 +1,211 @@
+﻿<process name="Grade Calculation" version="1.0" bpversion="6.9.0.26970" narrative="calculate grade as per marks" byrefcollection="true" type="object" runmode="Exclusive" preferredid="f7b93e6c-8f1a-4cc3-8b41-3f49c32d3973">
+  <appdef>
+    <element name="Application Root">
+      <id>3618c88f-39be-45d7-baea-98cb1d44f345</id>
+      <type>Application</type>
+      <basetype>Application</basetype>
+      <datatype>unknown</datatype>
+      <diagnose>False</diagnose>
+    </element>
+  </appdef>
+  <view>
+    <camerax>0</camerax>
+    <cameray>0</cameray>
+    <zoom version="2">1.25</zoom>
+  </view>
+  <preconditions />
+  <endpoint narrative="" />
+  <subsheet subsheetid="f62918c2-ee33-426b-8aee-ac4cae6c32da" type="CleanUp" published="True">
+    <name>Clean Up</name>
+    <view>
+      <camerax>0</camerax>
+      <cameray>0</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="ad802264-2d48-4e68-8f9d-524feb05410e" type="Normal" published="False">
+    <name>Grade</name>
+    <view>
+      <camerax>0</camerax>
+      <cameray>0</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <stage stageid="57efbb02-8c63-41bf-8a35-0710583d1fb8" name="Start" type="Start">
+    <loginhibit />
+    <display x="15" y="-105" />
+    <onsuccess>51408fb9-f41a-4e49-a59f-087062ab65f1</onsuccess>
+  </stage>
+  <stage stageid="51408fb9-f41a-4e49-a59f-087062ab65f1" name="End" type="End">
+    <loginhibit />
+    <display x="15" y="90" />
+  </stage>
+  <stage stageid="984ee2da-1d32-422e-9056-5effe6ebf9be" name="Stage1" type="ProcessInfo">
+    <display x="-195" y="-105" w="150" h="90" />
+    <references>
+      <reference>System.dll</reference>
+      <reference>System.Data.dll</reference>
+      <reference>System.Xml.dll</reference>
+      <reference>System.Drawing.dll</reference>
+    </references>
+    <imports>
+      <import>System</import>
+      <import>System.Drawing</import>
+      <import>System.Data</import>
+    </imports>
+    <language>visualbasic</language>
+    <globalcode><![CDATA[]]></globalcode>
+    <code><![CDATA[]]></code>
+  </stage>
+  <stage stageid="db92c5aa-829c-4a96-9738-0e2d77917d31" name="Clean Up" type="SubSheetInfo">
+    <subsheetid>f62918c2-ee33-426b-8aee-ac4cae6c32da</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="82674c59-7753-419c-96a6-4ec67218eee5" name="Start" type="Start">
+    <subsheetid>f62918c2-ee33-426b-8aee-ac4cae6c32da</subsheetid>
+    <loginhibit />
+    <display x="15" y="-105" />
+    <onsuccess>9bf306dc-46b9-4b7b-adab-908e5a368c34</onsuccess>
+  </stage>
+  <stage stageid="9bf306dc-46b9-4b7b-adab-908e5a368c34" name="End" type="End">
+    <subsheetid>f62918c2-ee33-426b-8aee-ac4cae6c32da</subsheetid>
+    <loginhibit />
+    <display x="15" y="90" />
+  </stage>
+  <stage stageid="0cd8f64e-a73e-4837-88ee-6646849b86a5" name="Grade" type="SubSheetInfo">
+    <subsheetid>ad802264-2d48-4e68-8f9d-524feb05410e</subsheetid>
+    <display x="-315" y="-150" w="150" h="90" />
+  </stage>
+  <stage stageid="84d963fe-3bae-42c5-aed9-675f48c0dd70" name="Start" type="Start">
+    <subsheetid>ad802264-2d48-4e68-8f9d-524feb05410e</subsheetid>
+    <loginhibit />
+    <display x="-150" y="-195" />
+    <onsuccess>ddfabe78-bb84-43e6-813d-48d24b625d51</onsuccess>
+  </stage>
+  <stage stageid="d4adfd26-4b33-4f1f-893c-eff382f8dce5" name="End" type="End">
+    <subsheetid>ad802264-2d48-4e68-8f9d-524feb05410e</subsheetid>
+    <loginhibit />
+    <display x="345" y="45" />
+  </stage>
+  <stage stageid="3f8664a8-47a0-4c2c-be34-221320bcfdb6" name="" type="Note">
+    <subsheetid>f62918c2-ee33-426b-8aee-ac4cae6c32da</subsheetid>
+    <narrative>Clean Up Page
+
+This is an optional page where you might choose to perform some finalisation (or "cleanup") tasks as your business object is closed down.
+
+The cleanup action will be called automatically immediately after closing your business object at the end of a business process.
+
+You will not be able to call this action from a business process, nor will it be called at any other time than before the disposal of the business object.</narrative>
+    <display x="-180" y="60" w="180" h="230" />
+  </stage>
+  <stage stageid="a869b237-e21a-4242-ab98-73134896caaa" name="" type="Note">
+    <narrative>Initialise Page
+
+This is an optional page where you might choose to perform some initialisation tasks after your business object is loaded.
+
+The initialise action will be called automatically immediately after loading your business object.
+
+You will not be able to call this action from a business process, nor will it be called at any other time than after the creation of the object.</narrative>
+    <display x="-180" y="60" w="180" h="230" />
+  </stage>
+  <stage stageid="ddfabe78-bb84-43e6-813d-48d24b625d51" name="Choice1" type="ChoiceStart">
+    <subsheetid>ad802264-2d48-4e68-8f9d-524feb05410e</subsheetid>
+    <loginhibit />
+    <display x="-45" y="-195" />
+    <groupid>6b68226a-14f9-4cae-afe4-a8081daf3a2a</groupid>
+    <choices>
+      <choice expression="[percentage]&gt;=90 AND [percentage]&lt;=100">
+        <name>Grade A</name>
+        <distance>60</distance>
+        <ontrue>d365e5fb-489e-4798-bdf1-c80a6b5ae19b</ontrue>
+      </choice>
+      <choice expression="[percentage]&gt;=70 AND [percentage]&lt;=89">
+        <name>Grade B</name>
+        <distance>120</distance>
+        <ontrue>74394ab9-de93-454b-a66b-56c973094373</ontrue>
+      </choice>
+      <choice expression="[percentage]&gt;=50 AND [percentage]&lt;=69">
+        <name>Grade C</name>
+        <distance>180</distance>
+        <ontrue>15cb7c89-2e30-4534-ab0a-e57008f1f0eb</ontrue>
+      </choice>
+      <choice expression="[percentage]&gt;=30 AND [percentage]&lt;=49">
+        <name>Grade D</name>
+        <distance>240</distance>
+        <ontrue>ca141a7e-3190-425a-99db-365510f06ca0</ontrue>
+      </choice>
+      <choice expression="[percentage]&gt;=0 AND [percentage]&lt;=29">
+        <name>Grade F</name>
+        <distance>300</distance>
+        <ontrue>b2e6d662-f468-4b76-9e97-faef5039967a</ontrue>
+      </choice>
+    </choices>
+  </stage>
+  <stage stageid="63e309b0-c107-4b11-9bef-fa8fe71de058" name="Otherwise1" type="ChoiceEnd">
+    <subsheetid>ad802264-2d48-4e68-8f9d-524feb05410e</subsheetid>
+    <loginhibit />
+    <display x="-45" y="165" />
+    <onsuccess>03a0d03e-9e29-4c48-9e38-f796ae5f31d5</onsuccess>
+    <groupid>6b68226a-14f9-4cae-afe4-a8081daf3a2a</groupid>
+  </stage>
+  <stage stageid="dba31fe0-67a6-4b1e-abf7-d1c50baa2808" name="percentage" type="Data">
+    <subsheetid>ad802264-2d48-4e68-8f9d-524feb05410e</subsheetid>
+    <loginhibit />
+    <display x="-240" y="-45" />
+    <datatype>number</datatype>
+    <initialvalue>70</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="d365e5fb-489e-4798-bdf1-c80a6b5ae19b" name="Grade A" type="Calculation">
+    <subsheetid>ad802264-2d48-4e68-8f9d-524feb05410e</subsheetid>
+    <loginhibit />
+    <display x="90" y="-135" />
+    <onsuccess>d4adfd26-4b33-4f1f-893c-eff382f8dce5</onsuccess>
+    <calculation expression="&quot;Grade A&quot;" stage="Grade" />
+  </stage>
+  <stage stageid="74394ab9-de93-454b-a66b-56c973094373" name="Grade B" type="Calculation">
+    <subsheetid>ad802264-2d48-4e68-8f9d-524feb05410e</subsheetid>
+    <loginhibit />
+    <display x="90" y="-75" />
+    <onsuccess>d4adfd26-4b33-4f1f-893c-eff382f8dce5</onsuccess>
+    <calculation expression="&quot;Grade B&quot;" stage="Grade" />
+  </stage>
+  <stage stageid="15cb7c89-2e30-4534-ab0a-e57008f1f0eb" name="Grade C" type="Calculation">
+    <subsheetid>ad802264-2d48-4e68-8f9d-524feb05410e</subsheetid>
+    <loginhibit />
+    <display x="90" y="-15" />
+    <onsuccess>d4adfd26-4b33-4f1f-893c-eff382f8dce5</onsuccess>
+    <calculation expression="&quot;Grade C&quot;" stage="Grade" />
+  </stage>
+  <stage stageid="ca141a7e-3190-425a-99db-365510f06ca0" name="Grade D" type="Calculation">
+    <subsheetid>ad802264-2d48-4e68-8f9d-524feb05410e</subsheetid>
+    <loginhibit />
+    <display x="90" y="30" />
+    <onsuccess>d4adfd26-4b33-4f1f-893c-eff382f8dce5</onsuccess>
+    <calculation expression="&quot;Grade D&quot;" stage="Grade" />
+  </stage>
+  <stage stageid="b2e6d662-f468-4b76-9e97-faef5039967a" name="Grade F" type="Calculation">
+    <subsheetid>ad802264-2d48-4e68-8f9d-524feb05410e</subsheetid>
+    <loginhibit />
+    <display x="90" y="75" />
+    <onsuccess>d4adfd26-4b33-4f1f-893c-eff382f8dce5</onsuccess>
+    <calculation expression="&quot;Grade F&quot;" stage="Grade" />
+  </stage>
+  <stage stageid="03a0d03e-9e29-4c48-9e38-f796ae5f31d5" name="Invalid" type="Calculation">
+    <subsheetid>ad802264-2d48-4e68-8f9d-524feb05410e</subsheetid>
+    <loginhibit />
+    <display x="90" y="135" />
+    <onsuccess>d4adfd26-4b33-4f1f-893c-eff382f8dce5</onsuccess>
+    <calculation expression="&quot;Invalid percentage&quot;" stage="Grade" />
+  </stage>
+  <stage stageid="233a97d1-a22b-4929-bcd8-3c6db421eb1f" name="Grade" type="Data">
+    <subsheetid>ad802264-2d48-4e68-8f9d-524feb05410e</subsheetid>
+    <loginhibit />
+    <display x="-255" y="0" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+</process>
